@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TitleCapitalize - Black Purple Theme Clone</title>
+    <style>
+        /* 全局黑紫配色重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #0a0a12;
+            color: #e8e8f0;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        :root {
+            --primary-purple: #9d4edd;
+            --purple-light: #c77dff;
+            --purple-dark: #5a189a;
+            --bg-dark: #0a0a12;
+            --bg-card: #141422;
+            --text-light: #f1f1ff;
+            --text-gray: #b8b8d0;
+            --border-purple: #3c1464;
+        }
+        h1, h2, h3, h4 {
+            color: var(--purple-light);
+            margin: 1.5rem 0 1rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .site-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        /* 输入框区域 */
+        .converter-wrap {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-purple);
+            margin-bottom: 3rem;
+        }
+        textarea {
+            width: 100%;
+            min-height: 180px;
+            background: #0f0f1b;
+            border: 1px solid var(--border-purple);
+            color: var(--text-light);
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            margin-bottom: 1rem;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(157, 78, 221, 0.2);
+        }
+        .btn-group {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        button {
+            background: var(--purple-dark);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: 0.2s ease;
+        }
+        button:hover {
+            background: var(--primary-purple);
+        }
+        .stats-row {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        /* 正文内容模块 */
+        .section-block {
+            margin-bottom: 2.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+        a {
+            color: var(--purple-light);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            padding-left: 1.8rem;
+            margin: 1rem 0;
+            color: var(--text-gray);
+        }
+        li {
+            margin-bottom: 0.6rem;
+        }
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+        }
+        th, td {
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border-purple);
+            text-align: left;
+        }
+        th {
+            background: var(--purple-dark);
+            color: white;
+        }
+        /* FAQ区块 */
+        .faq-item {
+            margin: 1.2rem 0;
+        }
+        .faq-item h4 {
+            margin-bottom: 0.4rem;
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TitleCapitalize</h1>
+        <p class="site-subtitle">Title Case Converter — Black Purple Dark Theme Clone</p>
+    </header>
+
+    <!-- 核心转换工具区 -->
+    <div class="converter-wrap">
+        <textarea id="inputText" placeholder="Paste any headline, blog post title, or email subject line here..."></textarea>
+        <div class="btn-group">
+            <button onclick="convertTitleCase()">Title Case</button>
+            <button onclick="convertLower()">lower case</button>
+            <button onclick="convertUpper()">UPPER CASE</button>
+            <button onclick="convertHyphen()">Hyphenated Output</button>
+            <button onclick="copyResult()">Copy Result</button>
+        </div>
+        <div class="stats-row">
+            Words: <span id="wordCount">0</span> | Characters: <span id="charCount">0</span>
+        </div>
+    </div>
+
+    <!-- 原版全部文档内容 1:1复刻 -->
+    <div class="section-block">
+        <h2>Style — Standard</h2>
+        <h2>What Is Title Case?</h2>
+        <p>Title case capitalizes the first letter of every major word in a title and keeps short connecting words like "a", "an", "the", "and", "or", "but", and most prepositions lowercase. It is the standard style for book titles, blog post headlines, academic paper titles, news headlines, and most marketing copy.</p>
+        <p>Each style guide draws the line in a slightly different place. The four most common American guides are APA , Chicago, MLA, and AP. They mostly agree on nouns, verbs, and adjectives, but they split on prepositions, conjunctions, and the "to" in infinitives. The title case styles comparison walks through every difference with examples.</p>
+    </div>
+
+    <div class="section-block">
+        <h3>Common Capitalization Questions</h3>
+        <p>For specific words, browse the per-word guides covering the most-searched cases: a, the, and , of , to , on, with , is , about, but, and our. You can also suggest a missing word through the contact form.</p>
+        <h4>FEATURED ON</h4>
+        <p>Product Hunt 632</p>
+    </div>
+
+    <div class="section-block">
+        <h2>How to Use the Title Case Converter</h2>
+        <p>Type or paste your title into the box above. The converter applies title case automatically as you type, with a one-click toggle to switch between Title Case, lower case, UPPER CASE , and hyphenated output.</p>
+        <p>Underneath the box, the tool counts your words and characters in real time, so you can check social post or email subject line length while you write. The output is ready to copy and paste straight into your blog editor, CMS, or email tool.</p>
+    </div>
+
+    <div class="section-block">
+        <h2>How Title Case Works</h2>
+        <p>Title case is more nuanced than "capitalize every word". The rules cover which words count as major and which stay lowercase. Every guide capitalizes the first and last words of the title, plus every noun, pronoun, verb, adjective, and adverb in between. The differences come down to how each guide treats articles, conjunctions, and prepositions.</p>
+
+        <h3>The Basics</h3>
+        <ul>
+            <li>Capitalize the first and last word of the title regardless of part of speech.</li>
+            <li>Capitalize every noun, pronoun, verb, adjective, and adverb.</li>
+            <li>Capitalize subordinating conjunctions like "because", "since", and "than".</li>
+            <li>Capitalize the first word after a colon or dash (most guides treat the subtitle as a fresh start).</li>
+        </ul>
+
+        <h3>Common Exceptions</h3>
+        <p>Articles ("a", "an", "the"), coordinating conjunctions ("and", "but", "for", "or", "nor", "so", "yet"), and short prepositions ("at", "by", "in", "of", "on", "to", "up") stay lowercase unless they are the first or last word. APA, AP, and AMA add a 4-letter rule that capitalizes any preposition with four or more letters, so "with", "from", "into", "about", and "after" get capitalized under those guides.</p>
+    </div>
+
+    <div class="section-block">
+        <h2>Style Guide Variations</h2>
+        <p>APA capitalizes every word of four or more letters and lowercases shorter articles, conjunctions, and prepositions. Chicago and MLA lowercase prepositions regardless of length, treating them as grammatical glue rather than principal words. AP and AMA follow the 4-letter rule like APA. The New York Times capitalizes prepositions of four or more letters but lowercases short ones like "on" and "to" as prepositions, while capitalizing them as adverbs. Bluebook (legal writing) uses a 5-letter cutoff. The full breakdown lives in the title case styles comparison.</p>
+
+        <h3>Title Capitalization Rules by Style</h3>
+        <p>Title case is not a single rule but a family of them. Every major style guide capitalizes the principal words (nouns, pronouns, verbs, adjectives, adverbs) the same way and differs mainly on prepositions, conjunctions, and the word "to". Here is how the eight most-used guides handle title capitalization, with a full guide for each.</p>
+
+        <table>
+            <tr>
+                <th>Style guide</th>
+                <th>Current edition</th>
+                <th>How it treats prepositions</th>
+                <th>Full guide</th>
+            </tr>
+            <tr>
+                <td>APA</td>
+                <td>7th edition</td>
+                <td>Capitalize words of 4 or more letters</td>
+                <td><a href="#">APA title case rules</a></td>
+            </tr>
+            <tr>
+                <td>Chicago (CMOS)</td>
+                <td>18th edition</td>
+                <td>Lowercase prepositions regardless of length</td>
+                <td><a href="#">Chicago title case rules</a></td>
+            </tr>
+            <tr>
+                <td>MLA</td>
+                <td>9th edition</td>
+                <td>Lowercase prepositions regardless of length</td>
+                <td><a href="#">MLA title case rules</a></td>
+            </tr>
+            <tr>
+                <td>AP</td>
+                <td>2024-26 Stylebook</td>
+                <td>Capitalize prepositions of 4 or more letters</td>
+                <td><a href="#">AP title capitalization rules</a></td>
+            </tr>
+            <tr>
+                <td>AMA</td>
+                <td>11th edition</td>
+                <td>Capitalize words of 4 or more letters</td>
+                <td><a href="#">AMA title case rules</a></td>
+            </tr>
+            <tr>
+                <td>Bluebook</td>
+                <td>21st edition</td>
+                <td>Lowercase prepositions of 4 or fewer letters</td>
+                <td><a href="#">Bluebook title case</a></td>
+            </tr>
+            <tr>
+                <td>New York Times</td>
+                <td>5th edition</td>
+                <td>Lowercase short prepositions; capitalize 4+ letters</td>
+                <td><a href="#">Compare in title case styles</a></td>
+            </tr>
+            <tr>
+                <td>Wikipedia</td>
+                <td>Manual of Style</td>
+                <td>Lowercase prepositions of 4 or fewer letters</td>
+                <td><a href="#">Compare in title case styles</a></td>
+            </tr>
+        </table>
+        <p>The converter at the top of the page applies these rules automatically. Pick your style, paste your title, and copy the result. For a side-by-side breakdown of where the guides agree and disagree, see the title case styles comparison.</p>
+    </div>
+
+    <div class="section-block">
+        <h2>What to Capitalize in a Title</h2>
+        <p>Across all four main styles (APA, Chicago, MLA, and AP), title case capitalizes the same core set of words and lowercases the same connecting words. The split between guides is narrow once you know the pattern.</p>
+        <p>Always capitalize the first word, the last word, and every major word in between: nouns, pronouns, verbs (including short ones like "is", "are", and "be"), adjectives, adverbs, and subordinating conjunctions such as "because", "although", and "than". Keep articles ("a", "an", "the"), the seven coordinating conjunctions ("and", "but", "or", "nor", "for", "so", "yet"), and short prepositions ("at", "by", "in", "of", "on", "to", "up") lowercase unless they fall first or last. APA, AP, and AMA add a four-letter rule that capitalizes longer prepositions like "with", "from", "about", and "between", while Chicago and MLA keep every preposition lowercase.</p>
+    </div>
+
+    <div class="section-block">
+        <h2>Which Title Case Style Should You Use?</h2>
+        <p>If your school, employer, or publication has a house style, follow it. If you are choosing for yourself, match the style to the context: use AP for blog posts, news, and marketing copy; APA for academic and social-science writing; Chicago for books and long-form; and MLA for humanities papers. When in doubt, AP is the safest default for general web writing because it is the most widely recognized and the simplest to apply.</p>
+    </div>
+
+    <div class="section-block">
+        <h2>Title Case vs Sentence Case</h2>
+        <p>Title case capitalizes most major words; sentence case capitalizes only the first word and proper nouns. Title case suits book titles, headlines, and formal documents, while sentence case has become the default for news headlines, app interfaces, email subject lines, and casual blog posts. You can switch any title between the two with the converter above, or read the full comparison in title case vs sentence case and what is sentence case .</p>
+    </div>
+
+    <div class="section-block">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h4>Is "the" capitalized in a title?</h4>
+            <p>Only when it is the first or last word of the title. In the middle of a title, "the" is an article and stays lowercase in every major style. See is "the" capitalized in a title.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Do you capitalize "is" in a title?</h4>
+            <p>Yes. "Is" is a verb, and verbs are always capitalized in title case regardless of length. The same goes for "are", "was", and "be". See is "is" capitalized in a title.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What words are not capitalized in title case?</h4>
+            <p>Articles ("a", "an", "the"), coordinating conjunctions ("and", "but", "or", "nor", "for", "so", "yet"), and short prepositions ("at", "by", "in", "of", "on", "to", "up") stay lowercase unless they are the first or last word of the title.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Should the first word after a colon be capitalized?</h4>
+            <p>In most styles, yes. APA, Chicago, MLA, and AP all capitalize the first word of a subtitle after a colon, even if it is normally a lowercase word. See title case after a colon.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Is title case the same as capitalizing every word?</h4>
+            <p>No. Capitalizing every word is "start case." True title case leaves articles, short conjunctions, and short prepositions lowercase. Capitalizing every word is a common mistake covered in common title case mistakes.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Does the converter support AP, APA, Chicago, and MLA?</h4>
+            <p>Yes. The title case converter applies the rules for the major style guides and also converts to sentence case, uppercase, lowercase, and hyphenated formats. Paste your title and pick the output you need.</p>
+        </div>
+    </div>
+
+    <script>
+        const input = document.getElementById('inputText');
+        const wordCountEl = document.getElementById('wordCount');
+        const charCountEl = document.getElementById('charCount');
+        let lastResult = "";
+
+        // 实时字数统计
+        input.addEventListener('input', () => {
+            const text = input.value;
+            const chars = text.length;
+            const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+            charCountEl.textContent = chars;
+            wordCountEl.textContent = words;
+        });
+
+        // 基础小写
+        function convertLower() {
+            lastResult = input.value.toLowerCase();
+            input.value = lastResult;
+        }
+        // 全大写
+        function convertUpper() {
+            lastResult = input.value.toUpperCase();
+            input.value = lastResult;
+        }
+        // 连字符格式
+        function convertHyphen() {
+            lastResult = input.value.toLowerCase().replace(/\s+/g, '-');
+            input.value = lastResult;
+        }
+        // AP标准Title Case（原版默认规则）
+        function convertTitleCase() {
+            const text = input.value.trim().toLowerCase();
+            const articles = new Set(['a','an','the']);
+            const conjunctions = new Set(['and','but','for','or','nor','so','yet']);
+            const shortPreps = new Set(['at','by','in','of','on','to','up']);
+            const words = text.split(/(\s+|:|-)/);
+
+            for(let i=0; i<words.length; i++){
+                const w = words[i].trim();
+                if(!w) continue;
+                // 首词、尾词、冒号后强制大写
+                if(i === 0 || i === words.length -1 || words[i-1] === ':' || words[i-1] === '-'){
+                    words[i] = capFirst(w);
+                    continue;
+                }
+                // 4字母以上介词大写
+                if(w.length >=4 && !articles.has(w) && !conjunctions.has(w)){
+                    words[i] = capFirst(w);
+                    continue;
+                }
+                // 冠词、并列连词、短介词小写
+                if(articles.has(w) || conjunctions.has(w) || shortPreps.has(w)){
+                    words[i] = w.toLowerCase();
+                }else{
+                    words[i] = capFirst(w);
+                }
+            }
+            lastResult = words.join('');
+            input.value = lastResult;
+        }
+        function capFirst(str){
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        // 复制结果
+        async function copyResult(){
+            if(!lastResult) return alert("Please convert text first");
+            await navigator.clipboard.writeText(lastResult);
+            alert("Copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
