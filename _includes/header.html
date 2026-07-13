@@ -1,0 +1,37 @@
+<header style="background:#2c3e50;padding:0 20px;box-shadow:0 2px 5px #999;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:60px;">
+        <a href="/" style="color:#fff;font-size:22px;text-decoration:none;font-weight:bold;">Title‑Case‑Capitalization</a>
+        
+        <!-- PC导航 -->
+        <nav class="pc-menu">
+            <a href="/" style="color:#fff;margin:0 12px;text-decoration:none;font-size:16px;">Home</a>
+            <a href="/seo-title-generator.html" style="color:#fff;margin:0 12px;text-decoration:none;font-size:16px;">SEO Title Generator</a>
+            <a href="/contact.html" style="color:#fff;margin:0 12px;text-decoration:none;font-size:16px;">Contact</a>
+        </nav>
+        
+        <!-- 移动端汉堡按钮 -->
+        <button id="menuBtn" style="display:none;background:transparent;border:none;color:white;font-size:26px;">☰</button>
+    </div>
+    
+    <!-- 移动端下拉菜单 -->
+    <div id="mobileMenu" style="display:none;background:#34495e;padding:15px 20px;">
+        <div><a href="/" style="color:white;display:block;padding:8px 0;text-decoration:none;">Home</a></div>
+        <div><a href="/seo-title-generator.html" style="color:white;display:block;padding:8px 0;text-decoration:none;">SEO Title Generator</a></div>
+        <div><a href="/contact.html" style="color:white;display:block;padding:8px 0;text-decoration:none;">Contact</a></div>
+    </div>
+</header>
+
+<style>
+@media (max-width:768px){
+    .pc-menu {display:none !important;}
+    #menuBtn {display:block !important;}
+}
+</style>
+
+<script>
+const btn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+btn.addEventListener('click',()=>{
+    mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block'
+})
+</script>
