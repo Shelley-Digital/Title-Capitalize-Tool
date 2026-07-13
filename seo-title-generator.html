@@ -199,7 +199,7 @@
         const submitBtn = document.getElementById("submitBtn");
         const resultArea = document.getElementById("resultArea");
 
-        // AP Style Title‑Case Function (matches real‑world SEO standards)
+        // AP Style Title‑Case Function
         function toTitleCase(str) {
             const smallWords = new Set(['a','an','the','and','but','or','nor','for','so','yet','in','on','at','by','to','of','up']);
             let words = str.toLowerCase().split(/\s+/);
@@ -216,7 +216,7 @@
             return words.join(" ");
         }
 
-        // Different unique template pools to avoid repetitive outputs
+        // 扩充超大模板库，每次都会随机挑选，更换关键词完全重新生成
         const templatePool = [
             (kw)=> `${kw}: Expert Tips To Get Better Real‑World Results Fast`,
             (kw)=> `What Experts Don’t Tell You About Choosing ${kw} In 2026`,
@@ -230,13 +230,16 @@
             (kw)=> `${kw} Compared: Which Option Delivers Long‑Term Benefits?`,
             (kw)=> `Things You Must Understand Before Investing Into ${kw}`,
             (kw)=> `Proven Strategies To Get The Most Out Of Your ${kw}`,
+            (kw)=> `Critical ${kw} Insights You Miss If You Skip Industry Research`,
+            (kw)=> `How To Select Perfect ${kw} Matching Your Actual Needs`,
+            (kw)=> `Untold Secrets To Boost Outcomes With Your New ${kw}`
         ];
 
         function generateTitles(keyword){
             resultArea.innerHTML = "";
             let usedIndexes = new Set();
             let finalTitles = [];
-            // Randomly pick distinct templates every time to avoid same‑order results
+            // 每次执行都会重新随机选取，和上一轮结果无关
             while(finalTitles.length <10){
                 let randIdx = Math.floor(Math.random()*templatePool.length);
                 if(!usedIndexes.has(randIdx)){
@@ -248,7 +251,7 @@
                     }
                 }
             }
-            // Render each title item with copy button
+            // 渲染结果
             finalTitles.forEach(title=>{
                 const div = document.createElement("div");
                 div.className = "title-item";
@@ -261,7 +264,7 @@
                 `;
                 resultArea.appendChild(div);
             })
-            // bind copy‑button click event
+            // 复制按钮事件
             document.querySelectorAll(".copy-btn").forEach(btn=>{
                 btn.onclick = async ()=>{
                     await navigator.clipboard.writeText(btn.dataset.text);
@@ -270,6 +273,7 @@
             })
         }
 
+        // 点击按钮就全新生成，输入新关键词就刷新结果
         submitBtn.addEventListener("click",()=>{
             const kw = input.value.trim();
             if(!kw){
