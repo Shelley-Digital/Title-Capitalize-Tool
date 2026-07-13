@@ -3,210 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO Title Generator | Ahrefs Clone Dark‑Purple Theme</title>
+    <title>SEO Title Generator | Black‑Purple Theme</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans‑serif;
         }
-        :root {
-            --bg-main: #090714;
-            --bg-card: #140f2b;
-            --primary-purple: #9d4edd;
-            --purple-light: #c77dff;
-            --purple-dark: #5a189a;
-            --text-white: #f3f3ff;
-            --text-gray: #b9b6d8;
-            --border-color: #381b61;
+        :root{
+            --bg-main:#080814;
+            --bg-card:#121226;
+            --primary:#9d4edd;
+            --purple-light:#c77dff;
+            --purple-dark:#4b1480;
+            --text-white:#f3f3ff;
+            --text-gray:#b4b4d1;
+            --border-color:#381463;
         }
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-gray);
-            line-height: 1.6;
-            padding: 40px 16px;
+        body{
+            background-color:var(--bg-main);
+            color:var(--text-white);
+            max-width:1050px;
+            margin:0 auto;
+            padding:3rem 1.2rem;
+            line-height:1.7;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+        h1{
+            font-size:2.3rem;
+            text-align:center;
+            color:var(--purple-light);
+            margin-bottom:12px;
         }
-        h1 {
-            color: var(--text-white);
-            font-size: 36px;
-            text-align: center;
-            margin-bottom: 12px;
+        .subtitle-desc{
+            text-align:center;
+            color:var(--text-gray);
+            font-size:1.05rem;
+            margin-bottom:40px;
         }
-        .page-desc {
-            text-align: center;
-            font-size: 17px;
-            margin-bottom: 40px;
+        .tool-container{
+            background:var(--bg-card);
+            padding:32px;
+            border-radius:14px;
+            border:1px solid var(--border-color);
+            margin-bottom:50px;
         }
-        .input-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 28px;
-            margin-bottom: 30px;
+        label{
+            display:block;
+            margin-bottom:10px;
+            font-size:1rem;
         }
-        label {
-            display: block;
-            color: var(--text-white);
-            font-weight: 500;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-        input, textarea {
-            width: 100%;
-            background: #0e0a20;
-            border: 1px solid var(--border-color);
-            color: var(--text-white);
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary-purple);
-            box-shadow: 0 0 0 3px rgba(157,78,221,0.25);
-        }
-        .row-two {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap:20px;
-            margin-top:20px;
-        }
-        .btn-generate {
+        #keywordInput{
             width:100%;
-            margin-top:24px;
-            background-color: var(--purple-dark);
-            color:#fff;
-            font-size:16px;
-            font-weight:500;
-            border: none;
-            padding:14px;
+            padding:14px 16px;
+            background:#0f0f20;
+            border:1px solid var(--border-color);
             border-radius:8px;
-            cursor: pointer;
-            transition: 0.25s;
+            font-size:1rem;
+            color:#fff;
+            margin-bottom:20px;
         }
-        .btn-generate:hover {
-            background-color: var(--primary-purple);
+        #keywordInput:focus{
+            outline:none;
+            border-color:var(--primary);
+            box-shadow:0 0 0 3px rgba(157,78,221,0.25);
+        }
+        #submitBtn{
+            background-color:var(--purple-dark);
+            color:white;
+            border:none;
+            padding:14px 26px;
+            border-radius:8px;
+            font-size:1rem;
+            cursor:pointer;
+            transition:0.25s;
+        }
+        #submitBtn:hover{
+            background-color:var(--primary);
         }
         .result-heading{
-            color: var(--purple-light);
-            font-size:22px;
-            margin:40px 0 20px;
+            margin:30px 0 16px;
+            font-size:1.3rem;
+            color:var(--purple-light);
         }
         .title-item{
-            background: var(--bg-card);
-            border:1px solid var(--border-color);
-            padding:16px;
-            border-radius:8px;
+            background:#0f0f20;
+            padding:14px 16px;
+            border-radius:7px;
             margin-bottom:12px;
+            border:1px solid #2c104c;
             display:flex;
-            justify-content: space-between;
+            justify-content:space-between;
             align-items:center;
         }
-        .title-text{
-            color: var(--text-white);
+        .char-limit{
+            font-size:0.85rem;
+            color:#9980bb;
         }
         .copy-btn{
-            background: transparent;
-            border:1px solid var(--primary-purple);
-            color: var(--purple-light);
             padding:6px 12px;
+            background:#5a189a;
+            border:none;
+            color:white;
             border-radius:5px;
             cursor:pointer;
         }
-        .info-section{
-            margin-top:60px;
+        /* FAQ section */
+        .faq-heading{
+            font-size:1.7rem;
+            color:var(--purple-light);
+            margin:50px 0 24px;
         }
-        .info-section h2{
-            color: var(--purple-light);
-            margin:30px 0 14px;
+        .faq-item{
+            background:var(--bg-card);
+            border:1px solid var(--border-color);
+            padding:18px 20px;
+            border-radius:10px;
+            margin-bottom:16px;
         }
-        .info-section p, li{
-            margin-bottom:12px;
+        .faq-q{
+            font-weight:bold;
+            margin-bottom:8px;
+            color:var(--purple-light);
         }
-        @media (max-width:640px){
-            .row-two{
-                grid-template-columns:1fr;
-            }
-            h1{
-                font-size:28px;
+        .faq-a{
+            color:var(--text-gray);
+        }
+        @media(max-width:700px){
+            h1{font-size:1.8rem;}
+            .title-item{
+                flex-direction:column;
+                align-items:flex-start;
+                gap:10px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>SEO Title Generator</h1>
-        <p class="page-desc">Create click‑worthy SEO‑optimized title tags for your web‑pages for free.</p>
+    <h1>SEO Title Generator</h1>
+    <p class="subtitle-desc">Generate High‑Click, Google‑Optimized Page Titles For Your Content</p>
 
-        <div class="input-card">
-            <label>Primary keyword</label>
-            <input id="keyword" placeholder="Example: best running shoes">
-            <div class="row-two">
-                <div>
-                    <label>Your brand name</label>
-                    <input id="brand" placeholder="Example: Nike">
-                </div>
-                <div>
-                    <label>Tone</label>
-                    <input id="tone" placeholder="Professional, Casual, Urgent">
-                </div>
-            </div>
-            <button class="btn-generate" onclick="generateTitles()">Generate Title Tags</button>
-        </div>
+    <div class="tool-container">
+        <label>Enter Your Core Keyword</label>
+        <input id="keywordInput" placeholder="Example: organic coffee beans">
+        <button id="submitBtn">Generate 10 SEO‑Friendly Titles</button>
 
-        <h3 class="result-heading">Generated Title Ideas</h3>
-        <div id="resultArea">
-        </div>
+        <div class="result-heading">Generated Title Suggestions (Max 70 Characters)</div>
+        <div id="resultArea"></div>
+    </div>
 
-        <div class="info-section">
-            <h2>What is an SEO Title Tag?</h2>
-            <p>An SEO title tag (page‑title) is the click‑able headline that shows up inside Google search results. Well‑written titles boost organic click‑through‑rate and rankings.</p>
-            <h2>Best Practices for Title‑Tags</h2>
-            <ul>
-                <li>Keep your title length between 50‑60 characters so Google displays full text.</li>
-                <li>Put your main keyword towards the front side of your title.</li>
-                <li>Add power‑words to increase click‑through‑rate.</li>
-                <li>Include your brand name at the end of the title consistently.</li>
-            </ul>
-        </div>
+    <h2 class="faq-heading">Frequently Asked Questions About Writing SEO Titles</h2>
+    <div class="faq-item">
+        <div class="faq-q">1. What Is The Ideal Character Limit For An SEO Title?</div>
+        <div class="faq-a">Keep your title under 70 characters so Google displays the full headline on desktop search results without truncating your text.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">2. Should I Always Put My Main Keyword At The Very Start?</div>
+        <div class="faq-a">Place primary keywords near the front for stronger ranking signals, but balance with click‑driven words for higher CTR.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">3. Does Title‑Case Improve Google Rankings For Page Titles?</div>
+        <div class="faq-a">Title‑Case doesn’t directly affect rankings, but it improves readability and click‑through‑rate which indirectly boosts SEO performance.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">4. How Can I Make My SEO Titles Stand Out Against Competitors?</div>
+        <div class="faq-a">Add benefit‑driven words, time‑saving claims or problem‑solving phrases instead of generic keyword‑only titles.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">5. Can I Use Numbers Inside My SEO Page Titles?</div>
+        <div class="faq-a">Numbers increase click‑through‑rate significantly; use them naturally without stuffing random digits just for clicks.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">6. Is It Okay To Include Brand Names In Every SEO Title?</div>
+        <div class="faq-a">For home‑page use your brand, but for blog posts only add brand if there is leftover character space.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">7. What Words Should I Avoid In My Title Tags?</div>
+        <div class="faq-a">Skip overused words like “Best” repeatedly; avoid keyword‑stuffing and misleading clickbait phrases.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">8. How Many Long‑Tail Variations Can I Fit Within A Title Tag?</div>
+        <div class="faq-a">Stick to one primary keyword plus one short long‑tail variant, never pile three‑plus keywords into limited space.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">9. Does Google Rewrite My Custom Page Titles Often?</div>
+        <div class="faq-a">Google rewrites titles if they are generic; write specific, human‑focused titles to reduce title‑rewrite chances.</div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-q">10. How Frequently Should I Update My Old SEO Titles?</div>
+        <div class="faq-a">Refresh under‑performing page titles every 6‑12 months with updated trending terms to regain search traffic.</div>
     </div>
 
     <script>
+        const input = document.getElementById("keywordInput");
+        const submitBtn = document.getElementById("submitBtn");
         const resultArea = document.getElementById("resultArea");
-        function generateTitles(){
-            const keyword = document.getElementById("keyword").value.trim();
-            const brand = document.getElementById("brand").value.trim();
-            if(!keyword){
-                alert("Please fill your primary keyword");
-                return;
+
+        // AP Style Title‑Case Function (matches real‑world SEO standards)
+        function toTitleCase(str) {
+            const smallWords = new Set(['a','an','the','and','but','or','nor','for','so','yet','in','on','at','by','to','of','up']);
+            let words = str.toLowerCase().split(/\s+/);
+            for(let i = 0; i < words.length; i++){
+                let w = words[i];
+                if(i===0 || i === words.length-1 || w.length >=4){
+                    words[i] = w.charAt(0).toUpperCase() + w.slice(1);
+                }else{
+                    if(!smallWords.has(w)){
+                        words[i] = w.charAt(0).toUpperCase() + w.slice(1);
+                    }
+                }
             }
-            const templates = [
-                `${keyword} | Expert Reviewed 2026 | ${brand}`,
-                `The Ultimate Guide to ${keyword} (Pro Tips) - ${brand}`,
-                `${keyword}: Honest Buying Advice You Need - ${brand}`,
-                `Top ${keyword} Options Compared by Industry Experts | ${brand}`,
-                `Why ${keyword} Matters in 2026 — Complete Overview | ${brand}`
-            ];
+            return words.join(" ");
+        }
+
+        // Different unique template pools to avoid repetitive outputs
+        const templatePool = [
+            (kw)=> `${kw}: Expert Tips To Get Better Real‑World Results Fast`,
+            (kw)=> `What Experts Don’t Tell You About Choosing ${kw} In 2026`,
+            (kw)=> `${kw} Guide: Common Mistakes Beginners Always Make Unknowingly`,
+            (kw)=> `Is ${kw} Worth It? Honest Breakdown For Practical Users Only`,
+            (kw)=> `7 Practical Ways To Improve Results Using High‑Quality ${kw}`,
+            (kw)=> `Learn How Top Industry Pros Get Maximum Value From ${kw}`,
+            (kw)=> `${kw} Buying Guide: Important Factors Most People Overlook`,
+            (kw)=> `Why Modern ${kw} Has Changed The Whole Industry Recently`,
+            (kw)=> `Beginner‑Friendly Advice To Master ${kw} Without Wasting Time`,
+            (kw)=> `${kw} Compared: Which Option Delivers Long‑Term Benefits?`,
+            (kw)=> `Things You Must Understand Before Investing Into ${kw}`,
+            (kw)=> `Proven Strategies To Get The Most Out Of Your ${kw}`,
+        ];
+
+        function generateTitles(keyword){
             resultArea.innerHTML = "";
-            templates.forEach((titleStr)=>{
+            let usedIndexes = new Set();
+            let finalTitles = [];
+            // Randomly pick distinct templates every time to avoid same‑order results
+            while(finalTitles.length <10){
+                let randIdx = Math.floor(Math.random()*templatePool.length);
+                if(!usedIndexes.has(randIdx)){
+                    usedIndexes.add(randIdx);
+                    let rawText = templatePool[randIdx](keyword);
+                    let formattedTitle = toTitleCase(rawText);
+                    if(formattedTitle.length <=70){
+                        finalTitles.push(formattedTitle);
+                    }
+                }
+            }
+            // Render each title item with copy button
+            finalTitles.forEach(title=>{
                 const div = document.createElement("div");
                 div.className = "title-item";
                 div.innerHTML = `
-                    <span class="title-text">${titleStr}</span>
-                    <button class="copy-btn" onclick="copyText('${titleStr}')">Copy</button>
+                    <span>${title}</span>
+                    <div>
+                        <span class="char-limit">${title.length}/70</span>
+                        <button class="copy-btn" data‑text="${title}">Copy</button>
+                    </div>
                 `;
                 resultArea.appendChild(div);
             })
+            // bind copy‑button click event
+            document.querySelectorAll(".copy-btn").forEach(btn=>{
+                btn.onclick = async ()=>{
+                    await navigator.clipboard.writeText(btn.dataset.text);
+                    alert("Copied Title to clipboard!");
+                }
+            })
         }
-        async function copyText(text){
-            await navigator.clipboard.writeText(text);
-            alert("Copied to clipboard");
-        }
+
+        submitBtn.addEventListener("click",()=>{
+            const kw = input.value.trim();
+            if(!kw){
+                alert("Please input your core keyword first");
+                return;
+            }
+            generateTitles(kw);
+        })
     </script>
 </body>
 </html>
