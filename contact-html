@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us - Title Capitalize Tool</title>
+
+<meta name="description" content="Contact Title Capitalize Tool for questions, suggestions, partnerships, and support. Reach us by email, phone, or WeChat.">
+
+<link rel="canonical" href="https://www.title-case-capitalization.pro/contact.html">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Contact Us - Title Capitalize Tool">
+<meta property="og:description" content="Get in touch with the Title Capitalize Tool team for support and inquiries.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.title-case-capitalization.pro/contact.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Title Capitalize Tool",
+  "url": "https://www.title-case-capitalization.pro/contact.html",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+86-15876072651",
+    "contactType": "customer support",
+    "email": "shelleydigital@gmail.com"
+  }
+}
+</script>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:-apple-system,BlinkMacSystemFont,
+    "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+html{
+    overflow-x:hidden;
+}
+
+body{
+    background:#0a0a12;
+    color:#e8e8f0;
+    line-height:1.7;
+    padding:30px 20px;
+    max-width:1200px;
+    margin:auto;
+    overflow-x:hidden;
+}
+
+
+:root{
+    --purple:#9d4edd;
+    --purple-light:#c77dff;
+    --purple-dark:#5a189a;
+    --card:#141422;
+    --border:#3c1464;
+    --gray:#b8b8d0;
+}
+
+
+header{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+
+h1{
+    font-size:42px;
+    color:var(--purple-light);
+    margin-bottom:15px;
+}
+
+
+.subtitle{
+    color:var(--gray);
+    max-width:850px;
+    margin:auto;
+    font-size:18px;
+}
+
+
+.contact-container{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+
+.contact-card{
+
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:35px;
+    transition:.3s;
+
+}
+
+
+.contact-card:hover{
+
+    border-color:var(--purple);
+    transform:translateY(-5px);
+
+}
+
+
+.contact-card h2{
+
+    color:var(--purple-light);
+    margin-bottom:20px;
+
+}
+
+
+.contact-item{
+
+    margin:18px 0;
+    font-size:18px;
+    color:var(--gray);
+
+}
+
+
+.contact-item strong{
+
+    color:white;
+
+}
+
+
+.contact-item a{
+
+    color:var(--purple-light);
+    text-decoration:none;
+
+}
+
+
+.contact-item a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+.message-box{
+
+    background:linear-gradient(
+    135deg,
+    #141422,
+    #211033
+    );
+
+    border-radius:15px;
+    padding:35px;
+    margin-top:40px;
+    border:1px solid var(--border);
+
+}
+
+
+.message-box h2{
+
+    color:var(--purple-light);
+    margin-bottom:15px;
+
+}
+
+
+ul{
+
+    margin-left:25px;
+    color:var(--gray);
+
+}
+
+
+footer{
+
+    text-align:center;
+    margin-top:60px;
+    color:#888;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+body{
+
+    padding:20px 15px;
+
+}
+
+
+h1{
+
+    font-size:32px;
+
+}
+
+
+.contact-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.contact-card,
+.message-box{
+
+    padding:25px;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>Contact Us</h1>
+
+<p class="subtitle">
+Have questions about our Title Capitalize Tool?
+Need support, feedback, or partnership opportunities?
+Feel free to contact us anytime.
+</p>
+
+</header>
+
+
+
+<section class="contact-container">
+
+
+<div class="contact-card">
+
+<h2>Get In Touch</h2>
+
+
+<div class="contact-item">
+
+<strong>Phone:</strong><br>
+
+<a href="tel:+8615876072651">
++86 15876072651
+</a>
+
+</div>
+
+
+
+<div class="contact-item">
+
+<strong>WeChat:</strong><br>
+
+shelley_seo
+
+</div>
+
+
+
+<div class="contact-item">
+
+<strong>Email:</strong><br>
+
+<a href="mailto:shelleydigital@gmail.com">
+
+shelleydigital@gmail.com
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<div class="contact-card">
+
+
+<h2>Contact Information</h2>
+
+
+<p>
+We welcome your suggestions, questions, and feedback about our free online title capitalization tools.
+</p>
+
+
+<br>
+
+
+<p>
+Whether you find a bug, have a feature request, or want to discuss cooperation opportunities, our team is happy to help.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="message-box">
+
+
+<h2>Why Contact Us?</h2>
+
+
+<ul>
+
+<li>Report technical issues or tool problems</li>
+
+<li>Suggest new capitalization features</li>
+
+<li>Share feedback about your user experience</li>
+
+<li>Discuss business cooperation opportunities</li>
+
+</ul>
+
+
+</section>
+
+
+
+<footer>
+
+© 2026 Title Capitalize Tool. All Rights Reserved.
+
+</footer>
+
+
+
+</body>
+
+</html>
