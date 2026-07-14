@@ -147,7 +147,6 @@
         <label>Enter Your Core Keyword</label>
         <input id="keywordInput" placeholder="Example: organic coffee beans">
         <button id="submitBtn">Generate 10 SEO‑Friendly Titles</button>
-
         <div class="result-heading">Generated Title Suggestions (Max 70 Characters)</div>
         <div id="resultArea"></div>
     </div>
@@ -239,7 +238,6 @@
         function generateTitles(keyword){
             resultArea.innerHTML = "";
             let finalTitles = [];
-            // 混合3种意图模板池
             let fullPool = [...infoTemplates,...commercialTemplates,...transactionTemplates];
             let usedIndex = new Set();
             while(finalTitles.length < 10){
@@ -253,7 +251,7 @@
                     }
                 }
             }
-            // 渲染每一条标题 +复制按钮
+            // 渲染结果
             finalTitles.forEach(title=>{
                 const div = document.createElement("div");
                 div.className = "title-item";
@@ -266,7 +264,7 @@
                 `;
                 resultArea.appendChild(div);
             })
-            // 绑定复制按钮事件
+            //复制按钮事件绑定
             document.querySelectorAll(".copy-btn").forEach(btn=>{
                 btn.onclick = async ()=>{
                     await navigator.clipboard.writeText(btn.dataset.text);
@@ -274,7 +272,8 @@
                 }
             })
         }
-        // 点击生成
+
+        //点击按钮，纯JS刷新结果，页面不重载
         submitBtn.addEventListener("click",()=>{
             const kw = input.value.trim();
             if(!kw){
