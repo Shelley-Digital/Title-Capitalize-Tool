@@ -77,6 +77,19 @@
             font-size: 1.1rem;
             margin-bottom: 3rem;
         }
+        /* Logo 样式新增 */
+        .site-logo-wrap {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .site-logo {
+            height: 80px;
+            width: auto;
+            transition: transform 0.25s ease;
+        }
+        .site-logo:hover {
+            transform: scale(1.05);
+        }
         /* 输入框区域 */
         .converter-wrap {
             background: var(--bg-card);
@@ -180,6 +193,9 @@
             .btn-group {
                 flex-direction: column;
             }
+            .site-logo {
+                height: 60px;
+            }
         }
     </style>
 <style>
@@ -278,6 +294,14 @@ textarea {
 </head>
 <body>
     <header>
+        <!-- 新增Logo区域 -->
+        <div class="site-logo-wrap">
+            <a href="https://www.title-case-capitalization.pro/">
+                <img class="site-logo" 
+                     src="https://github.com/Shelley-Digital/Title-Capitalize-Tool/blob/f7e1878f940ea79eafbc80df9a0143b2a594bbde/logo.png?raw=true" 
+                     alt="Title Capitalize Tool Logo">
+            </a>
+        </div>
         <h1>Title Capitalize Tool [Free] </h1>
         <p class="site-subtitle">Title Capitalize Tool [Free] helps you instantly convert titles to proper title case. Improve your blog posts, articles, headlines, and SEO content by capitalizing words correctly with this fast and easy online tool. No registration required — Simply enter your title and get a polished result in seconds.</p>
     </header>
@@ -416,27 +440,27 @@ textarea {
     <div class="section-block">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
-            <h4>Is "the" capitalized in a title?</h4>
+            <h3>Is "the" capitalized in a title?</h3>
             <p>Only when it is the first or last word of the title. In the middle of a title, "the" is an article and stays lowercase in every major style. See is "the" capitalized in a title.</p>
         </div>
         <div class="faq-item">
-            <h4>Do you capitalize "is" in a title?</h4>
+            <h3>Do you capitalize "is" in a title?</h3>
             <p>Yes. "Is" is a verb, and verbs are always capitalized in title case regardless of length. The same goes for "are", "was", and "be". See is "is" capitalized in a title.</p>
         </div>
         <div class="faq-item">
-            <h4>What words are not capitalized in title case?</h4>
+            <h3>What words are not capitalized in title case?</h3>
             <p>Articles ("a", "an", "the"), coordinating conjunctions ("and", "but", "or", "nor", "for", "so", "yet"), and short prepositions ("at", "by", "in", "of", "on", "to", "up") stay lowercase unless they are the first or last word of the title.</p>
         </div>
         <div class="faq-item">
-            <h4>Should the first word after a colon be capitalized?</h4>
+            <h3>Should the first word after a colon be capitalized?</h3>
             <p>In most styles, yes. APA, Chicago, MLA, and AP all capitalize the first word of a subtitle after a colon, even if it is normally a lowercase word. See title case after a colon.</p>
         </div>
         <div class="faq-item">
-            <h4>Is title case the same as capitalizing every word?</h4>
+            <h3>Is title case the same as capitalizing every word?</h3>
             <p>No. Capitalizing every word is "start case." True title case leaves articles, short conjunctions, and short prepositions lowercase. Capitalizing every word is a common mistake covered in common title case mistakes.</p>
         </div>
         <div class="faq-item">
-            <h4>Does the converter support AP, APA, Chicago, and MLA?</h4>
+            <h3>Does the converter support AP, APA, Chicago, and MLA?</h3>
             <p>Yes. The title case converter applies the rules for the major style guides and also converts to sentence case, uppercase, lowercase, and hyphenated formats. Paste your title and pick the output you need.</p>
         </div>
     </div>
